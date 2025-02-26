@@ -16,7 +16,11 @@
 /// - [`PI`] [PI]
 pub const PI: f32 = std::f32::consts::PI;
 
-fn count_to_5() -> i32 {
+/**
+* THIS IS COUNT_TO_5 FN
+* # count_to_5
+**/
+pub fn count_to_5() -> i32 {
     let mut f_oo = 0;
     loop {
         if f_oo > PI as i32 && f_oo >= 5 {
@@ -27,7 +31,7 @@ fn count_to_5() -> i32 {
     }
     f_oo
 }
-fn main() {
+pub fn main() {
     println!("I can count to {}", count_to_5());
 }
 #[cfg(test)]
