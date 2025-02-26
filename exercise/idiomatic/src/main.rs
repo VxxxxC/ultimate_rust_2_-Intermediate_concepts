@@ -8,7 +8,13 @@
 
 // Challenge: Clippy doesn't find *everything*. What else would you change to make this code better?
 
-const PI: f32 = std::f32::consts::PI;
+/// THIS IS CONSTANT VALUE OF PI
+/// # PI
+///
+/// It could generate by :
+/// - `std::f32:consts::PI`
+/// - [`PI`] [PI]
+pub const PI: f32 = std::f32::consts::PI;
 
 fn count_to_5() -> i32 {
     let mut f_oo = 0;
