@@ -8,6 +8,8 @@
 
 // Challenge: Clippy doesn't find *everything*. What else would you change to make this code better?
 
+//! # Hi! This is inner doc, on top of outter doc [///]
+//! below is PI and count_to_5
 /// THIS IS CONSTANT VALUE OF PI
 /// # PI
 ///
