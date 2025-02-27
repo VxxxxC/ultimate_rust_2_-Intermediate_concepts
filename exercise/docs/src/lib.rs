@@ -30,6 +30,7 @@ pub struct Pumpkin {
 // can't be used for pie. :'-(
 
 impl Pumpkin {
+    /// If You SMASH the PUMPKIN, it WILL BE GONE!!!
     pub fn smash(self) {}
 }
 
