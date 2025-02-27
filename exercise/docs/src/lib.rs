@@ -18,6 +18,7 @@
 /// Big orange thing
 /// # Recipes
 /// coming soon
+/// ![PumpKIN](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/FrenchMarketPumpkinsB.jpg/700px-FrenchMarketPumpkinsB.jpg)
 pub struct Pumpkin {
     /// it is a percentage
     pub roundness: f32,
