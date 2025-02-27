@@ -15,8 +15,13 @@
 // - Document the "roundness" field, explaining that it is a percentage
 // - Document the "orangeness" field, explaining that it is a number from 8 to 27
 
+/// Big orange thing
+/// # Recipes
+/// coming soon
 pub struct Pumpkin {
+    /// it is a percentage
     pub roundness: f32,
+    /// it is a number from 8 to 27
     pub orangeness: i32,
 }
 
