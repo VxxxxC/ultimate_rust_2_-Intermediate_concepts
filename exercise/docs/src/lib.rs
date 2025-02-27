@@ -37,11 +37,14 @@ impl Pumpkin {
 // 5. Document that BURNT_ORANGE is for the "orangeness" field in the Pumpkin struct.
 // - Link to the Pumpkin struct in your description
 
-/// LINK to struct doc [`Pumpkin`]
+/// # LINKABLE
+/// Click Here :
+/// [`Pumpkin`]
 pub const BURNT_ORANGE: i32 = 13;
 
 // Challenge: Find the option to pass to `cargo doc` so that documentation for this private item
 // gets generated as well.  Hint: `cargo doc -h` will show you all the relevant options.
+// NOTE: DONE: cargo doc --no-deps --open --docment-private-items
 
 /// For internal use only. In fact, this documentation is so private that it won't be generated.
 /// At least not by default. But if you pass the correct option in, it will magically appear!
