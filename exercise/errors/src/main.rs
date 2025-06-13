@@ -1,6 +1,7 @@
 // START IN lib.rs!
 
-use aquarium::Dolphin;
+use std::vec;
+use aquarium::{Dolphin, DolphinError};
 // Silence some warnings so they don't distract from the exercise.
 #[allow(clippy::vec_init_then_push)]
 
@@ -11,22 +12,27 @@ use aquarium::Dolphin;
 // - Have the play_time function return a `Result<Vec<String>>`. The vector of Strings will
 //   represent successful outcomes of various dolphin tricks.
 
-// fn play_time(dolphin: &Dolphin) -> ... {
-//     let mut responses = vec![];
-//     // 2b. Call the .say_your_name() method on `dolphin`, use `?` to unwrap the value, and push
-//     // the value onto the `responses` vector.
-//     //
-//     // let response = ...    // this can be done with an intermediate variable...
-//     // responses.push( ... ) // ...or all on one line. Either way is fine!
-//     //
-//     // 2c. Do the same thing as #2b for the .flip() method
-//     //
-//     // 2d. Do the same thing as #2b for the .shake_hands() method
-//
-//     Ok(responses)
-// }
+fn play_time(dolphin: &Dolphin) -> Result<Vec<String>,DolphinError> {
+    let mut responses = vec![];
+    // 2b. Call the .say_your_name() method on `dolphin`, use `?` to unwrap the value, and push
+    // the value onto the `responses` vector.
+    // let say_name = dolphin.say_your_name()?;
+    
+    // 2c. Do the same thing as #2b for the .flip() method
+    // let flip = dolphin.flip()?;
+    
+    // 2d. Do the same thing as #2b for the .shake_hands() method
+    // let shake_hands = dolphin.shake_hands()?;
 
-fn main() {
+    // let response = ...    // this can be done with an intermediate variable...
+    // responses.push( ... ) // ...or all on one line. Either way is fine!
+    responses.push(dolphin.say_your_name()?);
+    responses.push(dolphin.flip()?);
+    responses.push(dolphin.shake_hands()?);
+    Ok(responses)
+}
+
+fn main() -> Result<(),DolphinError>{
     let dolphins = vec![
         Dolphin {
             name: "Augustinius".into(),
@@ -64,7 +70,10 @@ fn main() {
                     println!("  {}", response);
                 }
             }
-            Err(e) => println!("{} can't perform today: {}", dolphin.name, e.to_string()),
+            
+            Err(e) => return Err(e),
+            // Err(e) => println!("{} can't perform today: {}", dolphin.name, e.to_string()),
         }
     }
+    Ok(())
 }
