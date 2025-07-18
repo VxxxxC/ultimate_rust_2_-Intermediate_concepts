@@ -1,6 +1,8 @@
 // 1. Bring the macros `error, warn, info, debug, trace` into scope from the log package with a
 // `use` statement.
-//
+#[warn(unused_imports)]
+use log::{debug, error, info, trace, warn};
+
 // You should be able to run `cargo build --lib` successfully after this step (and each step in this
 // file)
 //
@@ -15,19 +17,23 @@ pub struct Frog {
 impl Frog {
     pub fn new() -> Self {
         // 2. Use debug!() to log "A new Frog has been created"
+        debug!("A new Frong has been created");
         Default::default()
     }
     pub fn hop(&mut self) {
         self.energy -= 1;
         // 3. Use info!() to log that a Frog hopped, and how much energy is left
+        info!("The energy is {:?} left", self.energy);
         if self.energy == 0 {
             // 4. Use warn!() to warn that the frog will go to sleep since he ran out of energy
+            warn!("The Frog ran out energy & go to sleep now...");
             self.sleep();
         }
     }
     pub fn sleep(&mut self) {
         if self.sleeping {
             // 5. Use error!() to log a (non-fatal) error stating that the Frog is already asleep
+            error!("The Frog already sleeping..");
         } else {
             self.sleeping = true;
         }
@@ -37,9 +43,12 @@ impl Frog {
 impl Default for Frog {
     fn default() -> Self {
         // 6. Use trace!() to log that a default value was generated, with the debug representation
-        Frog {
+        let default = Frog {
             energy: 5,
             sleeping: false,
-        }
+        };
+
+        trace!("Default Frog value : {:?}", default);
+        default
     }
 }
