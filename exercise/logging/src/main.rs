@@ -20,6 +20,7 @@ fn main() {
     // - Now run it again with an explicit log level, like `RUST_LOG=info cargo run`
     // - or `RUST_LOG=trace cargo run`
     let mut skippy = Frog::new();
+    println!("Init Frog! The frog have {:?}", skippy);
     skippy.hop();
     skippy.hop();
     skippy.hop();
